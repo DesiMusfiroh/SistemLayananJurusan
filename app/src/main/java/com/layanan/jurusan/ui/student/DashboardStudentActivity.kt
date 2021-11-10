@@ -17,6 +17,7 @@ class DashboardStudentActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityDashboardStudentBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        supportActionBar?.hide()
 
         binding.navView.setItemSelected(R.id.navigation_home, true)
         supportFragmentManager
