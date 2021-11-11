@@ -6,5 +6,5 @@ import com.layanan.jurusan.data.DataRepository
 import com.layanan.jurusan.data.News
 
 class HomeViewModel(private val repository: DataRepository) : ViewModel() {
-    fun getNews() : LiveData<ArrayList<News>> = repository.getNews()
+    fun getLatestNews() : LiveData<List<News>> = repository.getLatestNews()
 }

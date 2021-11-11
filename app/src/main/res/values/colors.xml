@@ -16,4 +16,5 @@
     <color name="grey">#D1D1D1</color>
     <color name="greyDark">#616161</color>
     <color name="yellow">#FFEB3B</color>
+    <color name="input">#EBECEB</color>
 </resources>

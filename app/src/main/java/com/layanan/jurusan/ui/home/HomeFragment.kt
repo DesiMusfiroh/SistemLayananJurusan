@@ -6,12 +6,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.layanan.jurusan.data.News
 import com.layanan.jurusan.databinding.FragmentHomeBinding
 import com.layanan.jurusan.viewmodel.ViewModelFactory
 
 class HomeFragment : Fragment() {
     private lateinit var binding: FragmentHomeBinding
     private lateinit var viewModel: HomeViewModel
+    private lateinit var newsAdapter: HomeNewsAdapter
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = FragmentHomeBinding.inflate(layoutInflater, container, false)
@@ -23,5 +26,25 @@ class HomeFragment : Fragment() {
         val factory = ViewModelFactory.getInstance(requireActivity())
         viewModel = ViewModelProvider(this, factory)[HomeViewModel::class.java]
 
+        populateNews()
     }
+
+    private fun populateNews() {
+        viewModel.getLatestNews().observe(viewLifecycleOwner, { list ->
+            if (list !== null) {
+                newsAdapter = HomeNewsAdapter(list, requireContext())
+                newsAdapter.notifyDataSetChanged()
+
+                binding.apply {
+                    rvNews.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+                    rvNews.setHasFixedSize(true)
+                    rvNews.adapter = newsAdapter
+                }
+                newsAdapter.setOnItemClickCallback(object : HomeNewsAdapter.OnItemClickCallback {
+                    override fun onItemClicked(data: News) { }
+                })
+            }
+        })
+    }
+
 }

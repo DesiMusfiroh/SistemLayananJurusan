@@ -14,4 +14,12 @@
     <string name="title_announcement">Pengumuman</string>
     <string name="view_announcement">Lihat Semua</string>
     <string name="snippet_announcement">Cuplikan Pengumuman</string>
+    <string name="app_name_long">Sistem \nLayanan \nJurusan</string>
+    <string name="jurusan">Teknik Elektro dan Informatika</string>
+    <string name="welcome">Selamat Datang !</string>
+    <string name="desc_login">Silahkan masukkan Username dan Password akun Siakad anda untuk login !</string>
+    <string name="login">Login</string>
+    <string name="fakultas">Fakultas Sains dan Teknologi</string>
+    <string name="universitas">Universitas Jambi</string>
+    <string name="year">2022</string>
 </resources>

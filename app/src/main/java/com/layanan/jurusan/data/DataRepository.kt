@@ -17,5 +17,5 @@ class DataRepository private constructor(
                     }
                 }
     }
-    fun getNews(): LiveData<ArrayList<News>> = remoteDataSource.getNews()
+    fun getLatestNews(): LiveData<List<News>> = remoteDataSource.getLatestNews()
 }
