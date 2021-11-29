@@ -22,4 +22,7 @@
     <string name="fakultas">Fakultas Sains dan Teknologi</string>
     <string name="universitas">Universitas Jambi</string>
     <string name="year">2022</string>
+    <string name="student_name">Nama Mahasiswa</string>
+    <string name="major_name">Nama Jurusan</string>
+    <string name="generation">2018</string>
 </resources>
