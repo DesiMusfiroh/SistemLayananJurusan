@@ -19,7 +19,7 @@ class DataRepository private constructor(
                     }
                 }
     }
-    fun getLatestNews(): LiveData<List<News>> = remoteDataSource.getLatestNews()
+    fun getLatestNews(): LiveData<List<NewsModel>> = remoteDataSource.getLatestNews()
 
     fun login(username: String,password: String): LiveData<LoginDataResponse> = remoteDataSource.getUserLogin(username,password)
 }
